@@ -7,7 +7,7 @@ package dndtextgame;
 
 /**
  *This will be an emulation of roll your own adventure books. 
- * 
+ *  
  * @author cleddyf
  */
 public class Dndtextgame {
