@@ -16,7 +16,7 @@ public class Dnd {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       // TODO code application logic here
     }
     
     
@@ -27,5 +27,9 @@ public class Dnd {
         dice = rand.nextInt(7);
         return dice;
 }
-
+    
+    /*First page method.*/
+ public static void page0ne(){
+     
+ }
 }// end of class
