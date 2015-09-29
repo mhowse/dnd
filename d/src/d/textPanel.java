@@ -1,7 +1,8 @@
 /*textPanel.java
- * Howse sept 2015
+ * MHowse sept 2015
  */
 
+package d;
 
 import java.awt.*;
 import javax.swing.*;
@@ -13,7 +14,7 @@ public class textPanel extends JPanel {
   private JButton option1 = new JButton ("Option 1");
   private JButton option2 = new JButton ("Option 2");
   private JButton back = new JButton ("Back");
-  private JTextField digits = new JTextField("##"); 
+  private JTextField pagefield = new JTextField("##"); 
   private int [] history = new int [10];
   protected int pageNumber;
   private Timer timer;
@@ -33,8 +34,7 @@ public class textPanel extends JPanel {
     }  //close button loop
     timer = new Timer (DELAY, listener);  //timer section
     controlPanel.setPreferredSize(new Dimension(100,400));
-    controlPanel.add(digits);
-    
+    controlPanel.add(pagefield);
     add(controlPanel);
     add(drawPanel);
   }  
@@ -47,35 +47,19 @@ public class textPanel extends JPanel {
     textFrame.pack();
     textFrame.setVisible(true);
     textFrame.setTitle("Interactive fiction text game");
-   page1();
+   D.page1();
   } //end main 
- 
      
-  public static void page1 (){
-    String one = "This is the begining of the story";
-    drawString(one, x, y +25);
-  }
-    
   /** place where the circles are seen to be drawn*/
   private class DrawingPanel extends JPanel {  //inner class for graphics area
     DrawingPanel(){
       setPreferredSize(new Dimension (400,400));
-      setBackground(Color.white);}
-    
-  
-    
-  
+      setBackground(Color.white);
+    }
     
     /** drawing all shapes in array*/
     public void paintComponent(Graphics g){
       super.paintComponent(g);
-
-      /* it loop though each element of array, converted to for each loop after changin array to array list
-      for( Shape a : shapes) {
-        shapeNumber = shapes.indexOf(a);
-        a .display (g);
-        a.showIndex(g, shapeNumber);
-      }*/
     }    
   }//close drawing class 
   
@@ -89,60 +73,31 @@ public class textPanel extends JPanel {
       if (source == back){  
         try {
           //work out which page you are on, look at history array, go to page -1; 
-          
         }
-        catch (NumberFormatException forInputString){
-          digits.setText(" ");
+        catch (NumberFormatException e){
+          pagefield.setText(" ");
         }
         catch (IndexOutOfBoundsException e){
-          digits.setText("");
+          pagefield.setText("");
         }
       } 
       
-      // will move the shapes at each update of  timer, timer updates in delay sized amounts
+      // will move the images at each update of  timer, timer updates in delay sized amounts
       if (source == timer){ 
-      
       } else {
         
         JButton button = (JButton) aE.getSource();
-        if (button.getText()== "Stop"){   //lab 22 part 5
+        if (button.getText()== "Option 1"){  
           timer.stop();
         }else {
-          if (button.getText()== "Start") { 
+          if (button.getText()== "Option 2") { 
             timer.start();
           }
         }
-        if (button.getText() == "Circle"){
-          //shapes.add(new Circle());
-          //count++;
-          
-        }
-        else if (button.getText() == "Square"){
-         // shapes.add(new Square ());
-          //count++;
-          
-        }
-        else if (button.getText() == "Oval"){
-        //  shapes. add(new Oval ());
-          //count++;
-        }
-        else if (button.getText() == "Smiley"){
-          //shapes. add(new Smiley ());
-          // count++;
-        }
-        else if (button.getText() == "Swirl"){
-          //shapes.add(new Swirl ());
-          //count++;
-        }
-       // digits.setText(""+shapes.size());
-      } // close else block from timer if else
-      
-      repaint();   //step two of To finish section
-     // if (shapes.isEmpty()){
-       // digits.setText("");
       }
+      repaint();   //As time passes things change. 
+   
       
-    } //close method
-  } //close inner class
-  
- //close class
+    } // method
+  }//inner class
+  } //close class
