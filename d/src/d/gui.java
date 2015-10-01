@@ -110,15 +110,37 @@ public class gui extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
     
-     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    
+    
+     /**
+     * Turns back pages once user has made decision. 
+     * Passes decision to back page turning method.
+     * i.e. if a book, then flips pages in opposite direction. 
+     * @param evt 
+     * @return void
+     */
+     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {   
+         D.backPage();
         // TODO add your handling code here:
     }                                       
 
-
+ /**
+     * Turns the next page once user has made decision. 
+     * Passes decision to page turning choosing method.
+     * @param evt 
+     * @return void
+     */
     private void option1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Option1ActionPerformed
         // TODO add your handling code here:
+        D.nextPage(1);
     }//GEN-LAST:event_Option1ActionPerformed
 
+    /**
+     * Turns the next page once user has made decision. 
+     * Passes decision to page turning choosing method.
+     * @param evt 
+     * @return void
+     */
     private void option2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Option2ActionPerformed
         D.nextPage(2); // TODO add your handling code here:
     }//GEN-LAST:event_Option2ActionPerformed
