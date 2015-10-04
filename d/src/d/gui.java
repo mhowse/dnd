@@ -21,6 +21,10 @@ public class gui extends javax.swing.JPanel {
     public gui() {
         initComponents();
     }
+    
+    public static void main (String [] args){
+       gui g = new gui();
+    }
  
     /**
      * This method is called from within the constructor to initialize the form.
@@ -145,13 +149,23 @@ public class gui extends javax.swing.JPanel {
         D.nextPage(2); // TODO add your handling code here:
     }//GEN-LAST:event_Option2ActionPerformed
 
+    protected static void displayString(String s ){
+        String b, c;
+        System.out.println("test");
+        jTextArea1.getAccessibleContext();
+        c=  String.valueOf( jTextArea1.getRows());
+        b= String.valueOf(jTextArea1.getColumns());
+        System.out.println(c +b );
+        jTextArea1.insert(s, 1);
+       
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JButton option1;
     private javax.swing.JButton option2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private  static javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField buttonNumber;
     // End of variables declaration//GEN-END:variables
 }
