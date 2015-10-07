@@ -20,6 +20,7 @@ public class gui extends javax.swing.JPanel {
      */
     public gui() {
         initComponents();
+        outerBox.setVisible(true);
     }
     
     public static void main (String [] args){
@@ -34,7 +35,8 @@ public class gui extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+      
+      frame = new javax.swing.JFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
        outerBox = new javax.swing.JPanel();
@@ -118,6 +120,8 @@ public class gui extends javax.swing.JPanel {
                 .addComponent(outerBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        frame.add(outerBox);
+        frame.setVisible(true);
     }// </editor-fold>//GEN-END:initComponents
 
     private void pageNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -171,6 +175,7 @@ public class gui extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame frame;
     private javax.swing.JButton BackButton;
     private javax.swing.JButton Option1;
     private javax.swing.JButton Option2;
