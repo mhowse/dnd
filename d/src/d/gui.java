@@ -37,75 +37,85 @@ public class gui extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        backButton = new javax.swing.JButton();
-        option1 = new javax.swing.JButton();
-        option2 = new javax.swing.JButton();
-        pageNumber = new javax.swing.JTextField();
+       outerBox = new javax.swing.JPanel();
+        Option2 = new javax.swing.JButton();
+        Option1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        BackButton = new javax.swing.JButton();
+       
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        backButton.setText("Back");
-        backButton.addActionListener(new java.awt.event.ActionListener() {
+      
+      
+        Option2.setText("Option 2");
+        Option2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtonActionPerformed(evt);
+                Option2ActionPerformed(evt);
             }
         });
 
-        option1.setText("Option One.");
-        option1.addActionListener(new java.awt.event.ActionListener() {
+        Option1.setText("Option 2");
+        Option1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                option1ActionPerformed(evt);
+                Option1ActionPerformed(evt);
             }
         });
 
-        option2.setText("Option 2");
-        option2.addActionListener(new java.awt.event.ActionListener() {
+        jTextField1.setText("jTextField1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                option2ActionPerformed(evt);
+               // jTextField1ActionPerformed(evt);
             }
         });
 
-       pageNumber.setText("Current Page");
-        pageNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pageNumberActionPerformed(evt);
-            }
-        });
+        BackButton.setText("Back");
+
+       
+        javax.swing.GroupLayout outerBoxLayout = new javax.swing.GroupLayout(outerBox);
+        outerBox.setLayout(outerBoxLayout);
+        outerBoxLayout.setHorizontalGroup(
+            outerBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, outerBoxLayout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(BackButton)
+                .addGap(27, 27, 27)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Option1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Option2)
+                .addGap(28, 28, 28))
+            .addGroup(outerBoxLayout.createSequentialGroup()
+                .addContainerGap()
+                .addContainerGap())
+        );
+        outerBoxLayout.setVerticalGroup(
+            outerBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, outerBoxLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextArea1)
+                .addGap(18, 18, 18)
+                .addGroup(outerBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Option2)
+                    .addComponent(Option1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BackButton))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(backButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addComponent(pageNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(option1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(option2)
-                        .addGap(31, 31, 31))))
+            .addComponent(outerBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backButton)
-                    .addComponent(option1)
-                    .addComponent(option2)
-                    .addComponent(pageNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(outerBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -134,7 +144,7 @@ public class gui extends javax.swing.JPanel {
      * @param evt 
      * @return void
      */
-    private void option1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Option1ActionPerformed
+    private void Option1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Option1ActionPerformed
         // TODO add your handling code here:
         D.nextPage(1);
     }//GEN-LAST:event_Option1ActionPerformed
@@ -145,7 +155,7 @@ public class gui extends javax.swing.JPanel {
      * @param evt 
      * @return void
      */
-    private void option2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Option2ActionPerformed
+    private void Option2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Option2ActionPerformed
         D.nextPage(2); // TODO add your handling code here:
     }//GEN-LAST:event_Option2ActionPerformed
 
@@ -161,11 +171,12 @@ public class gui extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backButton;
-    private javax.swing.JButton option1;
-    private javax.swing.JButton option2;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JButton Option1;
+    private javax.swing.JButton Option2;
+    private javax.swing.JPanel outerBox;
     private javax.swing.JScrollPane jScrollPane1;
     private  static javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField buttonNumber;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
