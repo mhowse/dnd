@@ -1,5 +1,5 @@
 /*gui.java
- * MHowse/cleddyff october 2015
+ * MHowse/cleddyf october 2015
  * aka I give up on netbeans automatically generated bloat code and do it all by hand.
  */
 
@@ -16,8 +16,15 @@ import java.awt.event.*;
 import java.util.ArrayList;
 //import  java.util.ArrayList.indexOf();
 
+/**
+ * Start of gui class
+ */
 public class gui extends JPanel {
- 
+ /**
+  * Declare and initialize variables, 
+  * Buttons, textfields for displaying current page number
+  * other relevant things. 
+  */
   private JButton back = new JButton ("back");
   private JButton option1 = new JButton ("Option 1");
   private JButton option2 = new JButton ("Option 2");
@@ -31,7 +38,10 @@ public class gui extends JPanel {
   JButton []  buttonArray = { back, option1, option2};
   
   
-  /** make and add the graphical components, shape panel constructor*/ 
+  /** 
+   * gui constructor. 
+   * makes and add the graphical components
+   */ 
   public  gui(){  
     JPanel controlPanel = new JPanel();
     DrawingPanel drawPanel = new DrawingPanel (); //step 4 drawing panel class
@@ -52,8 +62,10 @@ public class gui extends JPanel {
     add(controlPanel);
     add(drawPanel);
   }  
-  /** main method*/
   
+  /** main method
+   * @param string args 
+   */
   public static void main(String[]args){
     JFrame shapeFrame = new JFrame();
     shapeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,37 +76,60 @@ public class gui extends JPanel {
    // Dnd.prolouge();
   }
   
-  /** place where the circles are seen to be drawn*/
-  private class DrawingPanel extends JPanel {  //inner class for graphics area
-    DrawingPanel(){
-      setPreferredSize(new Dimension (400,400));
-      setBackground(Color.white);}
-    
-    
-    
-    /** drawing all shapes in array*/
-    public void paintComponent(Graphics g){
-      super.paintComponent(g);
-      g.drawString(pageText, 10, 10);
-       
-    }
-    
-   
   
-  }//close drawing class
-
+  /**
+   * drawPage method
+   * How the gui class and Dnd class interact. 
+   * Dnd sends the text for the page to the gui class via this method. 
+   * this method places it in the correct variable. 
+   * The result is applied when the drawing class repaints the drawing panel. 
+   * @param  string a 
+   */
       public static void drawPage(String a){
         pageText = a;
       }
+      
+  /**
+   * Drawing panel inner class, 
+   * place where the pages and illustrations  are drawn/written 
+   * onto the  gui page
+   */
+  private class DrawingPanel extends JPanel {  //inner class for graphics area
+    /**
+     * Drawing panel constructor
+     */
+      DrawingPanel(){
+      setPreferredSize(new Dimension (400,400));
+      setBackground(Color.white);
+    }
+    
+    
+    
+    /** drawing all the things.
+     * @param Graphics g 
+     */
+    public void paintComponent(Graphics g){
+      super.paintComponent(g);
+      g.drawString(pageText, 10, 10);  
+    }
+    
+
+  }//close drawing class
+
 
   
   
-  /** setting up interaction*/
+  /** 
+   * Inner class handling button/user interactions. 
+   */
+  
   private class ButtonListener implements ActionListener{  //inner class for event handling
-    /** what to do when a button has been pressed */
+    /** what to do when a button has been pressed,
+     * @param actionevent ae
+     */
     public void actionPerformed(ActionEvent aE) {
       Object source = aE.getSource();
-      
+      // each button has own reaction.
       if (source == back){  
         D.backPage();
         pageNumber.setText(D.getPage());
