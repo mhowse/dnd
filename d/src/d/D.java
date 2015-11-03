@@ -34,9 +34,9 @@ public class D {
   //history array allows for keeping track of dead end-backtracking adventures better
  protected  static int pageCount; // how many pages through story we are
   protected  static int currentPage = history[pageCount]; //one currently on. 
-  protected  static int prevoiusPage = history[pageCount-1];
+  protected  static int prevoiusPage = history[pageCount] -1;
   protected static int pageNumberValue;
-  protected static String one= "";
+  protected static String one= "This story";
   /**
    * Turns back  page once user has made decision. 
    * Works out which page was up previous to the current one, and 
