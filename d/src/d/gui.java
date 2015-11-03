@@ -33,7 +33,7 @@ public class gui extends JPanel {
   //protected int count;
   protected int pageNo;
   private Timer timer;
-  protected static String pageText = "";
+  protected static String pageText = "start";
   private final int DELAY = 10;         
   JButton []  buttonArray = { back, option1, option2};
   
@@ -73,7 +73,6 @@ public class gui extends JPanel {
     shapeFrame.pack();
     shapeFrame.setVisible(true);
     shapeFrame.setTitle("shape panels and random circles");
-   // Dnd.prolouge();
   }
   
   
@@ -102,6 +101,7 @@ public class gui extends JPanel {
       setPreferredSize(new Dimension (400,400));
       setBackground(Color.white);
     }
+      
     
     
     
@@ -140,7 +140,10 @@ public class gui extends JPanel {
      if(source == option2){
         D.nextPage(2);
       }
-      
+     else {
+       D.nextPage(1);
+     }
+     repaint();
     } //close method
   } //close inner class
   
