@@ -34,6 +34,7 @@ public class gui extends JPanel {
   protected int pageNo;
   private Timer timer;
   protected static String pageText = "start";
+  protected static int picture = 0;
   private final int DELAY = 10;         
   JButton []  buttonArray = { back, option1, option2};
   
@@ -87,6 +88,16 @@ public class gui extends JPanel {
       public static void drawPage(String a){
         pageText = a;
       }
+      /**
+       * illustrate method, will have a small selection of images which can be 
+       * drawn in the page accompanying the text. Each image has a number, 
+       * the number is sent by the page method when illustrate is called, by 
+       * @param a which lets the method know which picture to draw
+       */
+      public static void illustrate(int a){
+              picture =a; 
+      
+      }
       
   /**
    * Drawing panel inner class, 
@@ -111,6 +122,11 @@ public class gui extends JPanel {
     public void paintComponent(Graphics g){
       super.paintComponent(g);
       g.drawString(pageText, 10, 10);  
+      if(picture == 3){ //image 3 is witches hat
+          g.setColor(Color.black);
+          g.fillOval(50,350,100,20);
+          
+      }
     }
     
 
