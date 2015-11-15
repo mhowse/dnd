@@ -88,8 +88,11 @@ public class gui extends JPanel {
    * The result is applied when the drawing class repaints the drawing panel. 
    * @param  string a 
    */
-      public static void drawPage(String a){
+      public static void drawPage(String a, String b, String c, String d){
         pageText = a;
+        lineTwo =b;
+        lineThree = c; 
+        lineFour =d;
       }
       /**
        * illustrate method, will have a small selection of images which can be 
@@ -125,9 +128,9 @@ public class gui extends JPanel {
     public void paintComponent(Graphics g){
       super.paintComponent(g);
       g.drawString(pageText, 10, 10);  
-      g.drawString(lineTwo, 10, 20);  
-      g.drawString(lineThree, 10, 30);  
-      g.drawString(lineFour, 10, 40);  
+      g.drawString(lineTwo, 20, 20);  
+      g.drawString(lineThree, 30, 30);  
+      g.drawString(lineFour, 40, 40);  
       if(picture == 3){ //image 3 is witches hat
           g.setColor(Color.black);
           g.fillOval(50,350,100,20);
