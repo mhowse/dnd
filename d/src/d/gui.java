@@ -34,6 +34,9 @@ public class gui extends JPanel {
   protected int pageNo;
   private Timer timer;
   protected static String pageText = "start";
+  protected static String lineTwo = " ";
+  protected static String lineThree = "  ";
+  protected static String lineFour = "  ";
   protected static int picture = 0;
   private final int DELAY = 10;         
   JButton []  buttonArray = { back, option1, option2};
@@ -122,6 +125,9 @@ public class gui extends JPanel {
     public void paintComponent(Graphics g){
       super.paintComponent(g);
       g.drawString(pageText, 10, 10);  
+      g.drawString(lineTwo, 10, 20);  
+      g.drawString(lineThree, 10, 30);  
+      g.drawString(lineFour, 10, 40);  
       if(picture == 3){ //image 3 is witches hat
           g.setColor(Color.black);
           g.fillOval(50,350,100,20);
