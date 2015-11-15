@@ -37,6 +37,9 @@ public class D {
   protected  static int prevoiusPage = history[pageCount] -1;
   protected static int pageNumberValue;
   protected static String one= "This story";
+  protected static String two= "This story";
+  protected static String three= "This story";
+  protected static String four= "This story";
   /**
    * Turns back  page once user has made decision. 
    * Works out which page was up previous to the current one, and 
@@ -139,8 +142,12 @@ public class D {
    */
   public static void page1 (){ 
     //set page text field to the page. 
-    one = "This is the begining of the story";
+    one = "This is the begining of the story /n once upon a time there was a witch";
+    two= "wandered though  a swamp with a pot of glue. ";
+    three= "she came to a fork in the path, should she go left or right?";
+    four = "click option 1 to go left, option 2 to go right.";
     gui.drawPage(one);
+    gui.illustrate(3);
     //add some ascii art. 
   }
    /**
