@@ -131,7 +131,7 @@ public class D {
    */
   public static void prolouge(){
     one = "This is a dnd inspired roll your own adventure interactive fiction";
-    gui.drawPage(one);
+    gui.drawPage(one,two,three,four);
     history[0] = 0;
     pageCount = 0;
   }
@@ -146,7 +146,7 @@ public class D {
     two= "wandered though  a swamp with a pot of glue. ";
     three= "she came to a fork in the path, should she go left or right?";
     four = "click option 1 to go left, option 2 to go right.";
-    gui.drawPage(one);
+    gui.drawPage(one,two,three,four);
     gui.illustrate(3);
     //add some ascii art. 
   }
