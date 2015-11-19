@@ -6,8 +6,6 @@
 package d;
 /*To do;
  * comment everthing 
- * commit once commented 
- * exception in initializer error  gui line 63/d prolouge
  */
 
 import java.awt.*;
