@@ -13,8 +13,13 @@ package d;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-//import  java.util.ArrayList.indexOf();
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Start of gui class
@@ -70,13 +75,20 @@ public class gui extends JPanel {
   /** main method
    * @param string args 
    */
-  public static void main(String[]args){
+  public static void main(String[]args) throws IOException{
     JFrame shapeFrame = new JFrame();
     shapeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     shapeFrame.getContentPane().add(new gui());
     shapeFrame.pack();
     shapeFrame.setVisible(true);
     shapeFrame.setTitle("shape panels and random circles");
+   /**
+   * Images declared and buffered for loading when page turned. 
+   */
+   final BufferedImage image1 = ImageIO.read(new File("image1.jpg"));
+   final BufferedImage image2 = ImageIO.read(new File("image2.jpg"));
+   final BufferedImage image3 = ImageIO.read(new File("image3.jpg"));
+  
   }
   
   
@@ -132,8 +144,8 @@ public class gui extends JPanel {
       g.drawString(lineThree, 30, 30);  
       g.drawString(lineFour, 40, 40);  
       if(picture == 3){ //image 3 is witches hat
-          g.setColor(Color.black);
-          g.fillOval(50,350,100,20);
+           g.drawImage(image3, 0, 0, null);
+         
           
       }
     }
