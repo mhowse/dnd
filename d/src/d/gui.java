@@ -45,7 +45,9 @@ public class gui extends JPanel {
   protected static int picture = 0;
   private final int DELAY = 10;         
   JButton []  buttonArray = { back, option1, option2};
-  
+  static  BufferedImage image1;
+  static BufferedImage image2 ;
+   static BufferedImage image3 ;
   
   /** 
    * gui constructor. 
@@ -85,9 +87,9 @@ public class gui extends JPanel {
    /**
    * Images declared and buffered for loading when page turned. 
    */
-   final BufferedImage image1 = ImageIO.read(new File("image1.jpg"));
-   final BufferedImage image2 = ImageIO.read(new File("image2.jpg"));
-   final BufferedImage image3 = ImageIO.read(new File("image3.jpg"));
+    image1 = ImageIO.read(new File("image1.jpg"));
+    image2 = ImageIO.read(new File("image2.jpg"));
+    image3 = ImageIO.read(new File("C:\\NetBeansProjects\\dnd\\dnd\\d\\src\\d\\image3.jpg"));
   
   }
   
@@ -144,7 +146,7 @@ public class gui extends JPanel {
       g.drawString(lineThree, 30, 30);  
       g.drawString(lineFour, 40, 40);  
       if(picture == 3){ //image 3 is witches hat
-           g.drawImage(image3, 0, 0, null);
+       g.drawImage(image3, 0, 0, null);
          
           
       }
