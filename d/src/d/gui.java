@@ -20,6 +20,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import javax.swing.WindowConstants;
 
 /**
  * Start of gui class
@@ -30,14 +31,14 @@ public class gui extends JPanel {
   * Buttons, textfields for displaying current page number
   * other relevant things. 
   */
-  private JButton back = new JButton ("back");
-  private JButton option1 = new JButton ("Option 1");
-  private JButton option2 = new JButton ("Option 2");
-  private JTextField pageNumber = new JTextField("##");  
-  private JLabel pageLabel = new JLabel("Current page");
+  private final JButton back = new JButton ("back");
+  private final JButton option1 = new JButton ("Option 1");
+  private final JButton option2 = new JButton ("Option 2");
+  private final JTextField pageNumber = new JTextField("##");  
+  private final JLabel pageLabel = new JLabel("Current page");
   //protected int count;
   protected int pageNo;
-  private Timer timer;
+  private final Timer timer;
   protected static String pageText = "start";
   protected static String lineTwo = " ";
   protected static String lineThree = "  ";
@@ -45,9 +46,7 @@ public class gui extends JPanel {
   protected static int picture = 0;
   private final int DELAY = 10;         
   JButton []  buttonArray = { back, option1, option2};
-  static  BufferedImage image1;
-  static BufferedImage image2 ;
-   static BufferedImage image3 ;
+  public static int imageNo=3;
   
   /** 
    * gui constructor. 
@@ -75,25 +74,20 @@ public class gui extends JPanel {
   }  
   
   /** main method
+     * @param args
    * @param string args 
+     * @throws java.io.IOException 
    */
-  public static void main(String[]args) throws IOException{
+  public  static void main(String[]args) throws IOException{
     JFrame shapeFrame = new JFrame();
     shapeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     shapeFrame.getContentPane().add(new gui());
     shapeFrame.pack();
     shapeFrame.setVisible(true);
     shapeFrame.setTitle("shape panels and random circles");
-   /**
-   * Images declared and buffered for loading when page turned. 
-   */
-    image1 = ImageIO.read(new File("image1.jpg"));
-    image2 = ImageIO.read(new File("image2.jpg"));
-    image3 = ImageIO.read(new File("C:\\NetBeansProjects\\dnd\\dnd\\d\\src\\d\\image3.jpg"));
-  
+   
   }
-  
-  
+   
   /**
    * drawPage method
    * How the gui class and Dnd class interact. 
@@ -125,6 +119,8 @@ public class gui extends JPanel {
    * onto the  gui page
    */
   private class DrawingPanel extends JPanel {  //inner class for graphics area
+        private BufferedImage image;
+        
     /**
      * Drawing panel constructor
      */
@@ -133,21 +129,38 @@ public class gui extends JPanel {
       setBackground(Color.white);
     }
       
+    /**
+   * Images declared and buffered for loading when page turned. 
+   */
+  
+  public void imageLoad(int a){
+    //image1 = ImageIO.read(new File("image1.jpg"));
+    //image2 = ImageIO.read(new File("image2.jpg"));
+         try {
+             if (a ==3){
+                image = ImageIO.read(DrawingPanel.class.getResource("image3.jpg"));
+             }
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
     
+  }
+  
     
     
     /** drawing all the things.
      * @param Graphics g 
      */
     public void paintComponent(Graphics g){
+       imageLoad(gui.imageNo);
       super.paintComponent(g);
       g.drawString(pageText, 10, 10);  
       g.drawString(lineTwo, 20, 20);  
       g.drawString(lineThree, 30, 30);  
       g.drawString(lineFour, 40, 40);  
       if(picture == 3){ //image 3 is witches hat
-       g.drawImage(image3, 0, 0, null);
-         
+       g.drawImage(image, 50, 50, null);
+         System.out.println("image drawn");
           
       }
     }
