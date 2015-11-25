@@ -142,8 +142,8 @@ public class D {
    */
   public static void page1 (){ 
     //set page text field to the page. 
-    one = "This is the begining of the story /n once upon a time there was a witch";
-    two= "wandered though  a swamp with a pot of glue. ";
+    one = "This is the begining of the story "; 
+    two= "One time a witch walked a path.";
     three= "she came to a fork in the path, should she go left or right?";
     four = "click option 1 to go left, option 2 to go right.";
     gui.drawPage(one,two,three,four);
