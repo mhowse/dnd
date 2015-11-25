@@ -42,7 +42,8 @@ public class gui extends JPanel {
   protected static String lineThree = "  ";
   protected static String lineFour = "  ";
   protected static int picture = 0;
-  private final int DELAY = 10;         
+  private final int DELAY = 10;   
+  private final int fontSize =25;
   JButton []  buttonArray = { back, option1, option2};
   public static int imageNo=3;
   
@@ -121,10 +122,14 @@ public class gui extends JPanel {
         
     /**
      * Drawing panel constructor
+     * Make, set size, background, set up Font options. 
      */
       DrawingPanel(){
       setPreferredSize(new Dimension (400,400));
       setBackground(Color.white);
+      String FontList[];
+      GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+      FontList = ge.getAvailableFontFamilyNames();
     }
       
     /**
@@ -151,13 +156,14 @@ public class gui extends JPanel {
      */
     public void paintComponent(Graphics g){
        imageLoad(gui.imageNo);
+       g.setFont(new Font("Comic Sans", Font.PLAIN, fontSize)); 
       super.paintComponent(g);
-      g.drawString(pageText, 10, 10);  
-      g.drawString(lineTwo, 20, 20);  
-      g.drawString(lineThree, 30, 30);  
-      g.drawString(lineFour, 40, 40);  
+      g.drawString(pageText, 10, 20);  
+      g.drawString(lineTwo, 10, 45);  
+      g.drawString(lineThree, 10, 75);  
+      g.drawString(lineFour, 10, 100);  
       if(picture == 3){ //image 3 is witches hat
-       g.drawImage(image, 50, 50, null);
+       g.drawImage(image, 50, 125, null);
          System.out.println("image drawn");
           
       }
