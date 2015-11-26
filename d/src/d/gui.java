@@ -41,6 +41,8 @@ public class gui extends JPanel {
   protected static String lineTwo = " ";
   protected static String lineThree = "  ";
   protected static String lineFour = "  ";
+    protected static String lineFive = "  ";
+      protected static String lineSix= "  ";
   protected static int picture = 0;
   private final int DELAY = 10;   
   private final int fontSize =25;
@@ -95,11 +97,13 @@ public class gui extends JPanel {
    * The result is applied when the drawing class repaints the drawing panel. 
    * @param  string a 
    */
-      public static void drawPage(String a, String b, String c, String d){
+      public static void drawPage(String a, String b, String c, String d, String e, String f){
         pageText = a;
         lineTwo =b;
         lineThree = c; 
         lineFour =d;
+        lineFive =e;
+        lineSix = f; 
       }
       /**
        * illustrate method, will have a small selection of images which can be 
@@ -161,9 +165,11 @@ public class gui extends JPanel {
       g.drawString(pageText, 10, 20);  
       g.drawString(lineTwo, 10, 45);  
       g.drawString(lineThree, 10, 75);  
-      g.drawString(lineFour, 10, 100);  
+      g.drawString(lineFour, 10, 100); 
+      g.drawString(lineFive, 10, 125);
+      g.drawString(lineSix, 10, 150);
       if(picture == 3){ //image 3 is witches hat
-       g.drawImage(image, 50, 125, null);
+       g.drawImage(image, 50, 175, null);
          System.out.println("image drawn");
           
       }
