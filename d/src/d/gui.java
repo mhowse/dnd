@@ -45,7 +45,7 @@ public class gui extends JPanel {
       protected static String lineSix= "  ";
   protected static int picture = 0;
   private final int DELAY = 10;   
-  private final int fontSize =25;
+  private final int fontSize =20;
   JButton []  buttonArray = { back, option1, option2};
   public static int imageNo=3;
   
@@ -168,7 +168,7 @@ public class gui extends JPanel {
       g.drawString(lineFour, 10, 100); 
       g.drawString(lineFive, 10, 125);
       g.drawString(lineSix, 10, 150);
-      if(picture == 3){ //image 3 is witches hat
+      if(picture == 3){ //image 3 is witch. 
        g.drawImage(image, 50, 175, null);
          System.out.println("image drawn");
           
