@@ -40,6 +40,8 @@ public class D {
   protected static String two= "This story";
   protected static String three= "This story";
   protected static String four= "This story";
+  protected static String five="this story";
+  protected static String six ="This story";
   /**
    * Turns back  page once user has made decision. 
    * Works out which page was up previous to the current one, and 
@@ -131,7 +133,7 @@ public class D {
    */
   public static void prolouge(){
     one = "This is a dnd inspired roll your own adventure interactive fiction";
-    gui.drawPage(one,two,three,four);
+    gui.drawPage(one,two,three,four, five, six);
     history[0] = 0;
     pageCount = 0;
   }
@@ -143,10 +145,12 @@ public class D {
   public static void page1 (){ 
     //set page text field to the page. 
     one = "This is the begining of the story "; 
-    two= "One time a witch walked a path.";
-    three= "she came to a fork in the path, should she go left or right?";
-    four = "click option 1 to go left, option 2 to go right.";
-    gui.drawPage(one,two,three,four);
+    two=  "Once upon a time there was a witch.";
+    three= " She walked through the woods. ";
+    four = "The path she was on came to a fork";
+    five ="Left was uphill, right downhill";
+    six ="click option 1 to go left, option 2 to go right.";
+    gui.drawPage(one,two,three,four, five, six);
     gui.illustrate(3);
     //add some ascii art. 
   }
