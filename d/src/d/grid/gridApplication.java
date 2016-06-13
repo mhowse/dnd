@@ -4,6 +4,8 @@
 
 package d.grid;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
@@ -12,8 +14,6 @@ import javax.swing.*;
 public class gridApplication extends JFrame{
     private JFrame frame;
     private Timer timer;
-    private JButton stop;
-    private JButton start;
     public gridApplication(){
         init();
         generate();
@@ -40,19 +40,18 @@ public class gridApplication extends JFrame{
     private void init(){
 		map Map = new map();
 		frame = new JFrame("gridGame");
+                JButton stop = new JButton("Stop");
+                JButton start = new JButton("Start");
                 JPanel ctrlP = new JPanel();//control panel
-                stop = new javax.swing.JButton();
-                start = new javax.swing.JButton();
-                stop.setText("Stop");
-                start.setText("Start");
+                ctrlP.setPreferredSize(new Dimension(500, 100));
                 ctrlP.add(start);
                 ctrlP.add(stop);
-                
-          
-                  
+                ctrlP.setBackground(Color.red);
+                frame.setPreferredSize(new Dimension(500,700));
                 frame.getContentPane().add(ctrlP);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().add(Map);
+                
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
 		
