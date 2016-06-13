@@ -47,10 +47,9 @@ public class gridApplication extends JFrame{
                 ctrlP.add(start);
                 ctrlP.add(stop);
                 ctrlP.setBackground(Color.red);
-                frame.setPreferredSize(new Dimension(500,700));
-                frame.getContentPane().add(ctrlP);
+                frame.setPreferredSize(new Dimension(500,600));
+                frame.setContentPane(ctrlP);
 		frame.getContentPane().add(Map);
-                
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);

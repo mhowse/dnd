@@ -13,7 +13,7 @@ public class map extends JPanel  {
     public map(){
         width =500; 
         height =500; 
-         setBackground(Color.white);
+         setBackground(Color.gray);
         setPreferredSize(new Dimension(width, height));
        
     }
