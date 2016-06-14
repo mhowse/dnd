@@ -15,6 +15,8 @@ public class gridApplication extends JFrame  {
     private JFrame frame;
     private Timer timer;
     private final int DELAY = 10;   
+    ButtonListener  listener;
+    map Map;
     public gridApplication(){
         init();
         generate();
@@ -31,10 +33,8 @@ public class gridApplication extends JFrame  {
      * Starts playing the game. 
      */
     public void start(){
-        ActionListener task = (ActionEvent evt) -> {
-            //...Perform a task...
-        };
-        timer = new Timer(DELAY,task);
+       
+        timer = new Timer(DELAY,listener);
     }
     
     /**
@@ -49,32 +49,36 @@ public class gridApplication extends JFrame  {
      * Handles the gui creation basically. 
      */
     private void init(){
-		map Map = new map();
-		frame = new JFrame("gridGame");
-                JButton stop = new JButton("Stop");
-                JButton start = new JButton("Start");
-                stop.addActionListener((ActionEvent e) -> {
-                    stop();
-                });
-                start.addActionListener((ActionEvent e) -> {
-                    start();
-                });
-                               
-                JPanel ctrlP = new JPanel();//control panel
-                ctrlP.setPreferredSize(new Dimension(500, 100));
-                ctrlP.add(start);
-                ctrlP.add(stop);
-                ctrlP.setBackground(Color.red);
-                frame.setPreferredSize(new Dimension(500,500));
-                frame.setContentPane(ctrlP);
-		frame.getContentPane().add(Map);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.pack();
-		frame.setVisible(true);
+        Map = new map();
+	frame = new JFrame("gridGame");
+        JButton stop = new JButton("Stop");
+        JButton start = new JButton("Start");
+        listener = new ButtonListener();        
+        stop.addActionListener(listener); 
+        start.addActionListener(listener);                   
+        JPanel ctrlP = new JPanel();//control panel
+        ctrlP.setPreferredSize(new Dimension(500, 100));
+               ctrlP.add(start);
+               ctrlP.add(stop);
+               ctrlP.setBackground(Color.red);
+               frame.setPreferredSize(new Dimension(500,500));
+               frame.setContentPane(ctrlP);
+	frame.getContentPane().add(Map);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.pack();
+	frame.setVisible(true);
 		
 	}
+    private class ButtonListener implements ActionListener{  //inner class for event handling
+        /** what to do when a button has been pressed */
+        public void actionPerformed(ActionEvent aE) {
+            Object source = aE.getSource();
+           map.repaint();   
+        } //close method
+  } //close inner class
+  
+}
     
                    
 
 
-}
