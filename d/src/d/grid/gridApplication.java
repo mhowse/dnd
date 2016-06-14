@@ -14,6 +14,7 @@ import java.lang.Object.*;
 public class gridApplication extends JFrame  {
     private JFrame frame;
     private Timer timer;
+    private final int DELAY = 10;   
     public gridApplication(){
         init();
         generate();
@@ -30,7 +31,10 @@ public class gridApplication extends JFrame  {
      * Starts playing the game. 
      */
     public void start(){
-       // timer = new Timer();
+        ActionListener task = (ActionEvent evt) -> {
+            //...Perform a task...
+        };
+        timer = new Timer(DELAY,task);
     }
     
     /**
@@ -49,17 +53,11 @@ public class gridApplication extends JFrame  {
 		frame = new JFrame("gridGame");
                 JButton stop = new JButton("Stop");
                 JButton start = new JButton("Start");
-                stop.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        stop();
-                    }
+                stop.addActionListener((ActionEvent e) -> {
+                    stop();
                 });
-                start.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        start();
-                    }
+                start.addActionListener((ActionEvent e) -> {
+                    start();
                 });
                                
                 JPanel ctrlP = new JPanel();//control panel
