@@ -73,7 +73,8 @@ public class gridApplication extends JFrame  {
         /** what to do when a button has been pressed */
         public void actionPerformed(ActionEvent aE) {
             Object source = aE.getSource();
-           map.repaint();   
+            
+           Map.repaint();   
         } //close method
   } //close inner class
   
