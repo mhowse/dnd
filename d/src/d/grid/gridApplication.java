@@ -60,7 +60,7 @@ public class gridApplication extends JFrame  {
         ctrlP.setPreferredSize(new Dimension(500, 100));
                ctrlP.add(start);
                ctrlP.add(stop);
-               ctrlP.setBackground(Color.red);
+               ctrlP.setBackground(Map.a);
                frame.setPreferredSize(new Dimension(500,500));
                frame.setContentPane(ctrlP);
 	frame.getContentPane().add(Map);
